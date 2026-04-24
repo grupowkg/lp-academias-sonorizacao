@@ -6,126 +6,156 @@
     <title>WKG Play - Sonorização Perfeita para sua Academia</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
-        /* Custom styles for Glassmorphism and Bento Grids if needed */
-        .glassmorphism {
-            background: rgba(10, 10, 12, 0.4);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap');
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0d0d0d;
+            color: #e0e0e0;
         }
-        .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
+        .hero-bg {
+            background-image: url('https://images.unsplash.com/photo-1534368940562-520e176b5cfd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .hero-bg::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.8) 100%);
+            z-index: 0;
+        }
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            border-radius: 12px;
+        }
+        .bento-grid-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .bento-grid-item::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at top left, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 70%);
+            pointer-events: none;
+            z-index: 1;
         }
     </style>
 </head>
-<body class="bg-[#020203] text-gray-100 font-sans antialiased">
-
+<body class="antialiased">
     <!-- Hero Section -->
-    <section class="relative h-screen flex items-center justify-center text-center overflow-hidden bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1579758784013-bc75560b411d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
-        <div class="absolute inset-0 bg-[#0a0a0c] opacity-70"></div>
-        <div class="relative z-10 p-8 max-w-4xl mx-auto glassmorphism rounded-lg">
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 text-[#5E6AD2]">
+    <section class="hero-bg min-h-screen flex items-center justify-center text-center relative p-4">
+        <div class="relative z-10 max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-['Playfair_Display'] font-bold leading-tight mb-6 text-white drop-shadow-lg">
                 SUA ACADEMIA MERECE UM SOM AMBIENTE DE QUALIDADE!
             </h1>
-            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-white">
+            <p class="text-xl md:text-2xl text-gray-200 mb-10 leading-relaxed">
                 AUMENTE A ENERGIA DO TREINO DOS SEUS ALUNOS COM UMA SONORIZAÇÃO PERFEITA.
-            </h2>
-            <p class="text-lg md:text-xl mb-8 text-gray-200">
-                Descubra como um projeto de som ambiente bem dimensionado transforma o ambiente, eleva a experiência do aluno e aumenta a permanência. Produtos de fábrica e engenharia de ponta ao seu alcance, ideal para sua nova academia.
             </p>
-            <a href="#formulario" class="inline-block bg-[#5E6AD2] hover:bg-[#4E5AD2] text-white font-bold py-4 px-8 rounded-full text-xl transition duration-300 ease-in-out transform hover:scale-105">
+            <a href="https://api.whatsapp.com/send?phone=SEU_NUMERO_WHATSAPP" class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold py-4 px-10 rounded-full text-lg uppercase tracking-wide transition-all duration-300 transform hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-purple-500 focus:ring-opacity-50">
                 Receba Seu Projeto de Sonorização Completo em Menos de 24 Horas
             </a>
         </div>
     </section>
 
-    <!-- A Dor do "Som Ruim" Section -->
-    <section class="py-16 bg-[#050506] text-center">
-        <div class="max-w-4xl mx-auto px-4">
-            <h3 class="text-3xl md:text-4xl font-bold mb-8 text-white">Evite Erros Comuns: Por Que um Projeto de Som Ruim Pode Prejudicar Sua Nova Academia?</h3>
-            <p class="text-lg md:text-xl mb-6 text-gray-300">
+    <!-- Agitation of Pain Section -->
+    <section class="py-20 px-4 md:px-8 bg-gray-900">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-4xl font-bold font-['Playfair_Display'] text-white mb-10">
+                Evite Erros Comuns: Por Que um Projeto de Som Ruim Pode Prejudicar Sua Nova Academia?
+            </h2>
+            <p class="text-lg text-gray-400 leading-relaxed mb-8">
                 Você está construindo a academia dos seus sonhos. Imagine entrar em um espaço novo e perceber que o som 'chia', estava 'opaco' ou simplesmente não motiva? Isso não é um problema de volume, é um erro de planejamento que você pode evitar.
             </p>
-            <p class="text-lg md:text-xl mb-6 text-gray-300">
-                Explicamos de forma simples: a incompatibilidade entre equipamentos, a potência mal dimensionada para o espaço e a falta de tratamento *adequado* são os verdadeiros culpados. Sem um projeto profissional, o som se perde, o ambiente sofre e a experiência do seu futuro aluno é comprometida desde o início.
-            </p>
-            <button class="bg-[#5E6AD2] hover:bg-[#4E5AD2] text-white font-bold py-3 px-6 rounded-full text-lg transition duration-300 ease-in-out transform hover:scale-105 mt-4">
-                Quero entender o tecniquês
-            </button>
-        </div>
-    </section>
-
-    <!-- Nossa Solução Completa Section -->
-    <section class="py-16 bg-[#020203] text-center">
-        <div class="max-w-5xl mx-auto px-4">
-            <h3 class="text-3xl md:text-4xl font-bold mb-8 text-[#5E6AD2]">A Fundação Sonora Perfeita para Sua Nova Academia: Projeto + Produtos com Preço de Fábrica.</h3>
-            <p class="text-lg md:text-xl mb-12 text-gray-300">
-                Na WKG Play, oferecemos mais do que equipamentos; entregamos uma experiência sonora de alta performance para o sucesso da sua inauguração. Desde o projeto de som ambiente, que considera cada detalhe do seu espaço, até a instalação dos melhores produtos com a vantagem exclusiva de preço de fábrica.
-            </p>
-            <div class="bento-grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="p-6 glassmorphism rounded-lg text-left">
-                    <h4 class="text-xl font-semibold mb-3 text-white">Projetos Personalizados</h4>
-                    <p class="text-gray-300">Engenharia de som ambiente pensada para o seu espaço e suas necessidades futuras.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                <div class="glassmorphism p-6 flex flex-col items-center">
+                    <img src="https://img.icons8.com/ios-filled/50/ffffff/no-audio.png" alt="No Audio Icon" class="w-12 h-12 mb-4 opacity-70">
+                    <h3 class="text-xl font-semibold text-white mb-2">Incompatibilidade de Equipamentos</h3>
+                    <p class="text-gray-300 text-center">Aparelhos que não conversam entre si geram ruídos e baixa qualidade.</p>
                 </div>
-                <div class="p-6 glassmorphism rounded-lg text-left">
-                    <h4 class="text-xl font-semibold mb-3 text-white">Equipamentos de Ponta</h4>
-                    <p class="text-gray-300">Produtos de áudio com a melhor tecnologia, diretamente da fábrica.</p>
+                <div class="glassmorphism p-6 flex flex-col items-center">
+                    <img src="https://img.icons8.com/ios-filled/50/ffffff/low-volume.png" alt="Low Volume Icon" class="w-12 h-12 mb-4 opacity-70">
+                    <h3 class="text-xl font-semibold text-white mb-2">Potência Mal Dimensionada</h3>
+                    <p class="text-gray-300 text-center">Som fraco ou excessivo para o seu espaço, comprometendo a experiência.</p>
                 </div>
-                <div class="p-6 glassmorphism rounded-lg text-left">
-                    <h4 class="text-xl font-semibold mb-3 text-white">Otimização de Custos</h4>
-                    <p class="text-gray-300">Qualidade superior sem comprometer seu orçamento de lançamento.</p>
-                </div>
-                <div class="p-6 glassmorphism rounded-lg text-left">
-                    <h4 class="text-xl font-semibold mb-3 text-white">Ambiente que Inspira</h4>
-                    <p class="text-gray-300">Crie uma atmosfera única que motiva seus alunos desde o primeiro dia.</p>
+                <div class="glassmorphism p-6 flex flex-col items-center">
+                    <img src="https://img.icons8.com/ios-filled/50/ffffff/sound-waves.png" alt="Sound Waves Icon" class="w-12 h-12 mb-4 opacity-70">
+                    <h3 class="text-xl font-semibold text-white mb-2">Falta de Tratamento Acústico</h3>
+                    <p class="text-gray-300 text-center">Reverberação e eco que transformam qualquer música em barulho.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Nossos Diferenciais Incomparáveis Section -->
-    <section class="py-16 bg-[#050506] text-center">
-        <div class="max-w-4xl mx-auto px-4">
-            <h3 class="text-3xl md:text-4xl font-bold mb-8 text-white">Por Que Escolher a WKG Play para Sua Nova Academia?</h3>
-            <ul class="list-none space-y-6">
-                <li class="p-4 glassmorphism rounded-lg text-left flex items-center">
-                    <span class="text-[#5E6AD2] text-2xl mr-4">✔️</span>
-                    <div>
-                        <h4 class="text-xl font-semibold text-white">Garantia Estendida</h4>
-                        <p class="text-gray-300">Invista com tranquilidade no seu novo negócio.</p>
-                    </div>
-                </li>
-                <li class="p-4 glassmorphism rounded-lg text-left flex items-center">
-                    <span class="text-[#5E6AD2] text-2xl mr-4">🚚</span>
-                    <div>
-                        <h4 class="text-xl font-semibold text-white">Envio para Todo Brasil</h4>
-                        <p class="text-gray-300">Sua solução chega onde sua academia estiver.</p>
-                    </div>
-                </li>
-                <li class="p-4 glassmorphism rounded-lg text-left flex items-center">
-                    <span class="text-[#5E6AD2] text-2xl mr-4">🤖</span>
-                    <div>
-                        <h4 class="text-xl font-semibold text-white">Suporte Especializado 24/7</h4>
-                        <p class="text-gray-300">Conte com nossa plataforma de inteligência artificial dedicada e equipe técnica para suporte rápido e eficiente a qualquer momento.</p>
-                    </div>
-                </li>
-            </ul>
+    <!-- Benefits Section (Bento Grid) -->
+    <section class="py-20 px-4 md:px-8 bg-gradient-to-br from-gray-800 to-black">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold font-['Playfair_Display'] text-white text-center mb-16">
+                Com a WKG Play, a música eleva o treino e o sucesso da sua academia.
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bento-grid-item glassmorphism md:col-span-2 bg-gradient-to-br from-purple-900/40 to-indigo-900/40">
+                    <img src="https://img.icons8.com/ios-filled/80/ffffff/strength.png" alt="Energy Icon" class="w-20 h-20 mb-6 opacity-80">
+                    <h3 class="text-3xl font-bold text-white mb-4">Aumento da Energia e Motivação</h3>
+                    <p class="text-lg text-gray-200">
+                        Nossa curadoria sonora é projetada para impulsionar o desempenho. Músicas que acompanham a intensidade do treino, elevam o astral e transformam cada aula em uma experiência inesquecível. Faça cada batida ressoar no engajamento dos seus alunos.
+                    </p>
+                </div>
+                <div class="bento-grid-item glassmorphism bg-gradient-to-br from-pink-900/40 to-red-900/40">
+                    <img src="https://img.icons8.com/ios-filled/80/ffffff/loyalty.png" alt="Retention Icon" class="w-20 h-20 mb-6 opacity-80">
+                    <h3 class="text-3xl font-bold text-white mb-4">Retenção de Alunos Otimizada</h3>
+                    <p class="text-lg text-gray-200">
+                        Sua marca, sua atmosfera. Criamos uma trilha sonora que é a extensão da sua identidade, sem repetições cansativas ou playlists genéricas. Sua academia, 100% no controle da experiência sonora.
+                    </p>
+                </div>
+                <div class="bento-grid-item glassmorphism bg-gradient-to-br from-green-900/40 to-teal-900/40">
+                    <img src="https://img.icons8.com/ios-filled/80/ffffff/settings.png" alt="Management Icon" class="w-20 h-20 mb-6 opacity-80">
+                    <h3 class="text-3xl font-bold text-white mb-4">Gestão de Som Descomplicada</h3>
+                    <p class="text-lg text-gray-200">
+                        Controle total da programação, agendamento e tipos de música, tudo na palma da sua mão. Esqueça as disputas pelo som; a gestão é sua, a música é perfeita.
+                    </p>
+                </div>
+                <div class="bento-grid-item glassmorphism md:col-span-2 bg-gradient-to-br from-yellow-900/40 to-orange-900/40">
+                    <img src="https://img.icons8.com/ios-filled/80/ffffff/headphones.png" alt="Expert Support Icon" class="w-20 h-20 mb-6 opacity-80">
+                    <h3 class="text-3xl font-bold text-white mb-4">Suporte Especializado 24/7</h3>
+                    <p class="text-lg text-gray-200">
+                        Conte com nossa plataforma de inteligência artificial dedicada e equipe técnica para suporte rápido e eficiente a qualquer momento. Sua sonorização nunca para.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Processo de Geração de Projeto Section (Formulário) -->
-    <section id="formulario" class="py-16 bg-[#020203] text-center">
-        <div class="max-w-xl mx-auto px-4 glassmorphism rounded-lg p-8">
-            <h3 class="text-3xl md:text-4xl font-bold mb-8 text-[#5E6AD2]">Sua Visão, Nosso Projeto: O Caminho para o Som Perfeito da Sua Academia!</h3>
-            <p class="text-lg mb-6 text-gray-300">
+    <!-- Call to Action Section -->
+    <section class="py-20 px-4 md:px-8 bg-gray-950 text-center" id="formulario">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-['Playfair_Display'] font-bold text-white mb-8 leading-tight">
+                Sua Visão, Nosso Projeto: O Caminho para o Som Perfeito da Sua Academia!
+            </h2>
+            <p class="text-xl text-gray-300 mb-12">
                 Para criarmos um projeto de sonorização realmente preciso e que atenda às suas expectativas, precisamos de algumas informações essenciais sobre o seu espaço.
             </p>
             <p class="text-xl font-bold mb-8 text-red-400">
                 IMPORTANTE: Após o envio inicial deste formulário, nossa equipe entrará em contato *diretamente com você via WhatsApp* para solicitar a **planta baixa** do local e um **vídeo simples da obra** (mesmo que ainda esteja em fase inicial). Com esses dados, agendaremos sua reunião exclusiva para a apresentação do orçamento e do projeto.
             </p>
-            <form class="space-y-6 text-left">
+            <form class="space-y-6 text-left max-w-xl mx-auto p-8 glassmorphism rounded-lg">
                 <div>
                     <label for="nome" class="block text-gray-200 text-sm font-bold mb-2">Nome:</label>
                     <input type="text" id="nome" name="nome" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-700 border-gray-600 text-white" placeholder="Seu Nome Completo" required>
@@ -162,44 +192,17 @@
                     <label for="observacoes" class="block text-gray-200 text-sm font-bold mb-2">Você possui algo para nos falar e que acredita que seja relevante na criação do seu projeto?</label>
                     <textarea id="observacoes" name="observacoes" rows="4" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-700 border-gray-600 text-white" placeholder="Detalhes adicionais..."></textarea>
                 </div>
-                <button type="submit" class="bg-[#5E6AD2] hover:bg-[#4E5AD2] text-white font-bold py-3 px-6 rounded-full text-lg transition duration-300 ease-in-out transform hover:scale-105 w-full">
+                <button type="submit" class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold py-4 px-10 rounded-full text-lg uppercase tracking-wide transition-all duration-300 transform hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-purple-500 focus:ring-opacity-50 w-full">
                     Enviar Informações Iniciais e Receber Contato
                 </button>
             </form>
         </div>
     </section>
 
-    <!-- Espaço para Prova Social (Futuros Vídeos) Section -->
-    <section class="py-16 bg-[#050506] text-center">
-        <div class="max-w-4xl mx-auto px-4">
-            <h3 class="text-3xl md:text-4xl font-bold mb-8 text-white">Casos de Sucesso: Futuras Academias que ConfiAm na WKG Play.</h3>
-            <p class="text-lg md:text-xl mb-12 text-gray-300">
-                Em breve, aqui você encontrará depoimentos em vídeo de donos de academias que construíram seus espaços com nossas soluções de sonorização. Inspire-se!
-            </p>
-            <div class="w-full h-64 bg-gray-700 rounded-lg flex items-center justify-center text-gray-400 text-2xl">
-                <span class="mr-2">▶️</span> Espaço para Vídeo de Case/Prova Social
-            </div>
-        </div>
-    </section>
-
-    <!-- Finalização e Contato Section -->
-    <footer class="py-12 bg-[#020203] text-center">
-        <div class="max-w-4xl mx-auto px-4">
-            <h3 class="text-2xl md:text-3xl font-bold mb-6 text-white">Tem Dúvidas sobre o Projeto da Sua Nova Academia? Fale com Nossos Especialistas!</h3>
-            <a href="https://api.whatsapp.com/send?phone=SEU_NUMERO_WHATSAPP" target="_blank" class="inline-block bg-[#10B981] hover:bg-[#0E9F76] text-white font-bold py-3 px-6 rounded-full text-lg transition duration-300 ease-in-out transform hover:scale-105">
-                Fale Conosco no WhatsApp
-            </a>
-            <div class="mt-8 text-gray-400">
-                <p>&copy; 2024 WKG Play. Todos os direitos reservados.</p>
-                <p>Email: contato@wkgplay.com.br</p>
-                <div class="flex justify-center space-x-4 mt-4">
-                    <a href="#" class="text-gray-400 hover:text-white">Facebook</a>
-                    <a href="#" class="text-gray-400 hover:text-white">Instagram</a>
-                    <a href="#" class="text-gray-400 hover:text-white">LinkedIn</a>
-                </div>
-            </div>
-        </div>
+    <!-- Footer -->
+    <footer class="bg-black py-8 px-4 text-center text-gray-500 text-sm">
+        <p>&copy; 2024 WKG Play. Todos os direitos reservados.</p>
+        <p class="mt-2">Grupo WKG</p>
     </footer>
-
 </body>
 </html>
