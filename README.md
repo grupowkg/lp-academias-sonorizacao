@@ -1,0 +1,1 @@
+# lp-academias-sonorizacao
