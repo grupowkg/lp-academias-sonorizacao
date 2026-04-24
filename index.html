@@ -66,12 +66,12 @@
             <h1 class="text-5xl md:text-7xl font-['Playfair_Display'] font-bold leading-tight mb-6 text-white drop-shadow-lg">
                 SUA ACADEMIA MERECE UM SOM AMBIENTE DE QUALIDADE!
             </h1>
-            <p class="text-xl md:text-2xl text-gray-200 mb-10 leading-relaxed">
-                AUMENTE A ENERGIA DO TREINO DOS SEUS ALUNOS COM UMA SONORIZAÇÃO PERFEITA.
+            <p class="text-xl md:text-2xl text-gray-200 mb-4 leading-relaxed font-semibold">
+                Receba seu orçamento de sonorização completo em menos de 24h
             </p>
-            <a href="https://api.whatsapp.com/send?phone=SEU_NUMERO_WHATSAPP" class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold py-4 px-10 rounded-full text-lg uppercase tracking-wide transition-all duration-300 transform hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-purple-500 focus:ring-opacity-50">
-                Receba Seu Projeto de Sonorização Completo em Menos de 24 Horas
-            </a>
+            <button id="open-form-popup" class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold py-4 px-10 rounded-full text-lg uppercase tracking-wide transition-all duration-300 transform hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-purple-500 focus:ring-opacity-50 mt-6">
+                SOLICITE AGORA
+            </button>
         </div>
     </section>
 
@@ -144,18 +144,31 @@
     </section>
 
     <!-- Call to Action Section -->
-    <section class="py-20 px-4 md:px-8 bg-gray-950 text-center" id="formulario">
+    <section class="py-20 px-4 md:px-8 bg-gray-950 text-center" id="call-to-action-section">
         <div class="max-w-4xl mx-auto">
             <h2 class="text-4xl md:text-5xl font-['Playfair_Display'] font-bold text-white mb-8 leading-tight">
-                Sua Visão, Nosso Projeto: O Caminho para o Som Perfeito da Sua Academia!
+                Pronto para Elevar a Experiência Sonora da Sua Academia?
             </h2>
             <p class="text-xl text-gray-300 mb-12">
+                Clique no botão "SOLICITE AGORA" na seção principal para iniciar seu projeto de sonorização.
+            </p>
+        </div>
+    </section>
+
+    <!-- Pop-up Modal (Hidden by default) -->
+    <div id="form-popup-modal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 hidden p-4">
+        <div class="bg-gray-900 p-8 rounded-lg max-w-2xl mx-auto relative glassmorphism">
+            <button id="close-form-popup" class="absolute top-4 right-4 text-gray-400 hover:text-white text-3xl font-bold">&times;</button>
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 text-purple-400 text-center">
+                Sua Visão, Nosso Projeto: O Caminho para o Som Perfeito da Sua Academia!
+            </h2>
+            <p class="text-lg mb-6 text-gray-300 text-center">
                 Para criarmos um projeto de sonorização realmente preciso e que atenda às suas expectativas, precisamos de algumas informações essenciais sobre o seu espaço.
             </p>
-            <p class="text-xl font-bold mb-8 text-red-400">
-                IMPORTANTE: Após o envio inicial deste formulário, nossa equipe entrará em contato *diretamente com você via WhatsApp* para solicitar a **planta baixa** do local e um **vídeo simples da obra** (mesmo que ainda esteja em fase inicial). Com esses dados, agendaremos sua reunião exclusiva para a apresentação do orçamento e do projeto.
-            </p>
-            <form class="space-y-6 text-left max-w-xl mx-auto p-8 glassmorphism rounded-lg">
+            <div class="p-4 bg-red-900/20 text-red-400 rounded-lg mb-8 uppercase font-bold text-center border border-red-700 text-sm">
+                IMPORTANTE: APÓS O ENVIO INICIAL DESTE FORMULÁRIO, NOSSA EQUIPE ENTRARÁ EM CONTATO DIRETAMENTE COM VOCÊ VIA WHATSAPP PARA SOLICITAR A PLANTA BAIXA DO LOCAL E UM VÍDEO SIMPLES DA OBRA (MESMO QUE AINDA ESTEJA EM FASE INICIAL). COM ESSES DADOS, AGENDAREMOS SUA REUNIÃO EXCLUSIVA PARA A APRESENTAÇÃO DO ORÇAMENTO E DO PROJETO.
+            </div>
+            <form class="space-y-6 text-left max-w-xl mx-auto">
                 <div>
                     <label for="nome" class="block text-gray-200 text-sm font-bold mb-2">Nome:</label>
                     <input type="text" id="nome" name="nome" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-700 border-gray-600 text-white" placeholder="Seu Nome Completo" required>
@@ -197,12 +210,36 @@
                 </button>
             </form>
         </div>
-    </section>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-black py-8 px-4 text-center text-gray-500 text-sm">
         <p>&copy; 2024 WKG Play. Todos os direitos reservados.</p>
         <p class="mt-2">Grupo WKG</p>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const openButton = document.getElementById('open-form-popup');
+            const modal = document.getElementById('form-popup-modal');
+            const closeButton = document.getElementById('close-form-popup');
+
+            if (openButton && modal && closeButton) {
+                openButton.addEventListener('click', () => {
+                    modal.classList.remove('hidden');
+                });
+
+                closeButton.addEventListener('click', () => {
+                    modal.classList.add('hidden');
+                });
+
+                // Optional: Close modal when clicking outside of it
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        modal.classList.add('hidden');
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
