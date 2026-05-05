@@ -69,6 +69,9 @@
             <p class="text-xl md:text-2xl text-gray-200 mb-4 leading-relaxed font-semibold">
                 Receba seu orçamento de sonorização completo em menos de 24h
             </p>
+            <button id="scroll-to-form" class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold py-4 px-10 rounded-full text-lg uppercase tracking-wide transition-all duration-300 transform hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-purple-500 focus:ring-opacity-50 mt-6">
+                SOLICITE AGORA
+            </button>
 
         </div>
     </section>
@@ -217,5 +220,19 @@
         <p class="mt-2">Grupo WKG</p>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const scrollToFormButton = document.getElementById('scroll-to-form');
+            const formSection = document.getElementById('form-section');
+
+            if (scrollToFormButton && formSection) {
+                scrollToFormButton.addEventListener('click', () => {
+                    formSection.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>
