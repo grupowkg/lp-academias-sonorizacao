@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obrigado! - WKG Play</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap');
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0d0d0d;
+            color: #e0e0e0;
+        }
+        .thank-you-bg {
+            background-image: url('https://images.unsplash.com/photo-1534368940562-520e176b5cfd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .thank-you-bg::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.7);
+            z-index: 0;
+        }
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <section class="thank-you-bg min-h-screen flex items-center justify-center text-center relative p-4">
+        <div class="relative z-10 max-w-2xl mx-auto glassmorphism p-8 rounded-lg">
+            <h1 class="text-5xl md:text-6xl font-['Playfair_Display'] font-bold leading-tight mb-6 text-white drop-shadow-lg">
+                OBRIGADO!
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-200 mb-8 leading-relaxed">
+                Sua solicitação foi enviada com sucesso.
+            </p>
+            <p class="text-lg md:text-xl text-gray-300 mb-12">
+                Em breve, nossa equipe entrará em contato via WhatsApp para coletar mais informações e iniciar o projeto da sua academia.
+            </p>
+            <a href="index.html" class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold py-3 px-8 rounded-full text-lg uppercase tracking-wide transition-all duration-300 transform hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-purple-500 focus:ring-opacity-50">
+                Voltar para a Landing Page
+            </a>
+        </div>
+    </section>
+</body>
+</html>
