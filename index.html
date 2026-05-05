@@ -242,7 +242,7 @@
                     const data = Object.fromEntries(formData.entries());
 
                     try {
-                        const response = await fetch('http://[2a02:4780:6e:63bf::1]:5000/submit-lead', { // ATENÇÃO: Substitua pelo IP/Domínio real da sua VPS
+                        const response = await fetch('http://187.77.55.80:5000/submit-lead', { // Usando IP IPv4 para comunicação com o proxy Flask
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json',
